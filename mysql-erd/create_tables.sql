@@ -12,7 +12,7 @@ CREATE  TABLE IF NOT EXISTS `geotweets`.`places` (
   `type` VARCHAR(45) NULL ,
   PRIMARY KEY (`id`) ,
   SPATIAL INDEX `coord` (`coord` ASC) )
-ENGINE = MyISAM;
+ENGINE = MyISAM DEFAULT CHARSET=UTF8;
 
 
 CREATE  TABLE IF NOT EXISTS `geotweets`.`users` (
@@ -27,7 +27,7 @@ CREATE  TABLE IF NOT EXISTS `geotweets`.`users` (
   `utc_offset` INT NULL ,
   `verified` BOOLEAN NULL ,
   PRIMARY KEY (`id`) )
-ENGINE = MyISAM;
+ENGINE = MyISAM DEFAULT CHARSET=UTF8;
 
 CREATE  TABLE IF NOT EXISTS `geotweets`.`tweets` (
   `id` VARCHAR(45) NOT NULL ,
@@ -56,4 +56,4 @@ CREATE  TABLE IF NOT EXISTS `geotweets`.`tweets` (
     REFERENCES `geotweets`.`places` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = MyISAM;
+ENGINE = MyISAM DEFAULT CHARSET=UTF8;
